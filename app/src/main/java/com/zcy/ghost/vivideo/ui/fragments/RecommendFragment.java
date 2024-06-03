@@ -168,14 +168,14 @@ public class RecommendFragment extends BaseMvpFragment<RecommendPresenter> imple
             adapter.clear();
             final List<VideoInfo> videoInfos;
             for (int i = 1; i < videoRes.list.size(); i++) {
-                if (videoRes.list.get(i).title.equals("精彩推荐")) {
+                if ("精彩推荐".equals(videoRes.list.get(i).title)) {
                     videoInfos = videoRes.list.get(i).childList;
                     adapter.addAll(videoInfos);
                     break;
                 }
             }
             for (int i = 1; i < videoRes.list.size(); i++) {
-                if (videoRes.list.get(i).title.equals("免费推荐")) {
+                if ("免费推荐".equals(videoRes.list.get(i).title)) {
                     recommend = videoRes.list.get(i).childList;
                     break;
                 }

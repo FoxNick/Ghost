@@ -31,7 +31,7 @@ public class BannerAdapter extends StaticPagerAdapter {
 
     private void removeEmpty(List<VideoInfo> list) {
         for (int i = 0; i < list.size(); i++) {
-            if (!list.get(i).loadType.equals("video")) {
+            if (!"video".equals(list.get(i).loadType)) {
                 list.remove(i);
                 i--;
             }

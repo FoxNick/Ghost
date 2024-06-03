@@ -468,7 +468,7 @@ public class SystemUtils {
     public static String getIMEI(Context context) {
         TelephonyManager mTelephonyMgr = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         String imei = mTelephonyMgr.getDeviceId();
-        if (TextUtils.isEmpty(imei) || imei.equals("000000000000000")) {
+        if (TextUtils.isEmpty(imei) || "000000000000000".equals(imei)) {
             imei = "0";
         }
         return imei;
@@ -658,8 +658,8 @@ public class SystemUtils {
                         break;
                     default:
                         // http://baike.baidu.com/item/TD-SCDMA 中国移动 联通 电信 三种3G制式
-                        if (_strSubTypeName.equalsIgnoreCase("TD-SCDMA") || _strSubTypeName.equalsIgnoreCase("WCDMA")
-                                || _strSubTypeName.equalsIgnoreCase("CDMA2000")) {
+                        if ("TD-SCDMA".equalsIgnoreCase(_strSubTypeName) || "WCDMA".equalsIgnoreCase(_strSubTypeName)
+                                || "CDMA2000".equalsIgnoreCase(_strSubTypeName)) {
                             strNetworkType = "3G";
                         } else {
                             strNetworkType = _strSubTypeName;
