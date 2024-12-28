@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.iconics.typeface.IIcon;
+import java.security.SecureRandom;
 
 import java.util.Random;
 
@@ -55,7 +56,7 @@ public class StringUtils {
     }
 
     public static int getRandomNumber(int min, int max) {
-        return new Random().nextInt(max) % (max - min + 1) + min;
+        return new SecureRandom().nextInt(max) % (max - min + 1) + min;
     }
 
     public static String getErrorMsg(String msg) {
