@@ -8,6 +8,7 @@ import android.net.NetworkInfo;
 import android.text.TextUtils;
 
 import com.zcy.ghost.vivideo.app.App;
+import io.github.pixee.security.BoundedLineReader;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -93,7 +94,7 @@ public class SystemUtil {
         BufferedReader reader = null;
         try {
             reader = new BufferedReader(new FileReader("/proc/" + pid + "/cmdline"));
-            String processName = reader.readLine();
+            String processName = BoundedLineReader.readLine(reader, 5_000_000);
             if (!TextUtils.isEmpty(processName)) {
                 processName = processName.trim();
             }
